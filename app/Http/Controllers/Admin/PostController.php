@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Tag;
 use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
 use Illuminate\Validation\Rule;  
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
@@ -96,22 +96,22 @@ class PostController extends Controller
     }
 
     // Update the specified resource in storage.
-    // public function update(Request $request, Post $post)
-    // {
-    //     if (Auth::id() != $post->user_id) abort(401);
+    public function update(Request $request, Post $post)
+    {
+        if (Auth::id() != $post->user_id) abort(401);
 
-    //     // validation
-    //     $this->validation_rules['slug'][] = Rule::unique('posts')->ignore($post->id);
-    //     $request->validate($this->validation_rules);
-    //     $data = $request->all();
+        // validation
+        $this->validation_rules['slug'][] = Rule::unique('posts')->ignore($post->id);
+        $request->validate($this->validation_rules);
+        $data = $request->all();
 
-    //     // aggiornare nel database
-    //     $post->update($data);
-    //     $post->tags()->sync($data['tags']);
+        // aggiornare nel database
+        $post->update($data);
+        $post->tags()->sync($data['tags']);
 
-    //     // redirect
-    //     return redirect()->route('admin.posts.show', ['post' => $post]);
-    // }
+        // redirect
+        return redirect()->route('admin.posts.show', ['post' => $post]);
+    }
 
     /**
      * Update the specified resource in storage.
@@ -120,17 +120,7 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Post $post)
     {
         //

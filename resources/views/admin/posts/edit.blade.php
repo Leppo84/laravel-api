@@ -2,7 +2,7 @@
 
 @section('mainContent')
     <h1>Edit post</h1>
-    <form action="{{ route('admin.posts.edit', ['post' => $post]) }}" method="post" novalidate>
+    <form action="{{ route('admin.posts.update', ['post' => $post]) }}" method="post" novalidate>
         @csrf
         @method('put')
 
