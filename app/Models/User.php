@@ -38,7 +38,7 @@ class User extends Authenticatable
     ];
 
     public function userDetails() {
-        return $this->hasOne('App\Models\UserDetails'); // nella tabella che non ha il foreign key
+        return $this->hasOne('App\Models\UserDetail'); // nella tabella che non ha il foreign key
     }
 
     public function posts() {

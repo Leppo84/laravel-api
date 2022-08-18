@@ -27859,7 +27859,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Leppo\Varie Leppo\Corso fullstack con Boleean\Esercizi corso\php\php-Laravel\laravel-many-to-many\resources\js\back.js */"./resources/js/back.js");
+module.exports = __webpack_require__(/*! D:\Leppo\Varie Leppo\Corso fullstack con Boleean\Esercizi corso\php\php-Laravel\laravel-api\resources\js\back.js */"./resources/js/back.js");
 
 
 /***/ })
